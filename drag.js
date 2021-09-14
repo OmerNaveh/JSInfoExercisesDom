@@ -32,7 +32,7 @@
 // }
 // thumb.ondragstart=function(){return false};
 
-const field=document.getElementById("field");
+let field=document.getElementById("field");
 field.onmousedown=function(e){
     e.preventDefault();
     let shiftY = e.clientY - field.getBoundingClientRect().top;
@@ -41,13 +41,13 @@ field.onmousedown=function(e){
 
     function moveheroes(e)
     {
-       let newTop=  e.clientY - shiftY - slider.getBoundingClientRect().top;
+       let newTop=  e.clientY - shiftY;
         if (newTop < 0)
          {
             newTop = 0;
          }
 
-         thumb.style.top = newTop + 'px';
+         field.style.top = newTop + 'px';
     }
 
 
